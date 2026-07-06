@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LM Instrumentos Musicales | Tienda y Taller de Luthería en Santiago</title>
+    <meta name="description" content="LM Instrumentos Musicales es tu tienda y taller de luthería especializado en Santiago, Chile. Venta y reparación de guitarras, bajos, violines eléctricos y acústicos, e instrumentos de viento.">
+    
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon (Inline SVG for clean performance) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎻</text></svg>">
+</head>
+<body>
+
+    <!-- ==========================================
+         HEADER / NAVIGATION
+         ========================================== -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#inicio" class="logo">
+                <i class="fas fa-guitar logo-icon"></i>
+                LM<span>Instrumentos Musicales</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="cart-icon-btn" id="cart-drawer-btn" title="Ver mi lista de cotización">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+                </button>
+                <button class="hamburger" aria-label="Abrir menú de navegación">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <!-- Instagram-Style Stories Highlights -->
+            <div class="stories-container">
+                <div class="story-bubble" onclick="openStory('taller')">
+                    <div class="story-ring">
+                        <div class="story-avatar"><i class="fas fa-tools"></i></div>
+                    </div>
+                    <span>El Taller</span>
+                </div>
+                <div class="story-bubble" onclick="openStory('ingresos')">
+                    <div class="story-ring">
+                        <div class="story-avatar"><i class="fas fa-guitar"></i></div>
+                    </div>
+                    <span>Ingresos</span>
+                </div>
+                <div class="story-bubble" onclick="openStory('violin')">
+                    <div class="story-ring">
+                        <div class="story-avatar"><i class="fas fa-music"></i></div>
+                    </div>
+                    <span>Violines E.</span>
+                </div>
+                <div class="story-bubble" onclick="openStory('clientes')">
+                    <div class="story-ring">
+                        <div class="story-avatar"><i class="fas fa-star"></i></div>
+                    </div>
+                    <span>Músicos</span>
+                </div>
+                <div class="story-bubble" onclick="openStory('local')">
+                    <div class="story-ring">
+                        <div class="story-avatar"><i class="fas fa-store"></i></div>
+                    </div>
+                    <span>La Tienda</span>
+                </div>
+            </div>
+
+            <span class="hero-badge">Calidad, Tradición y Servicio Técnico</span>
+            <h1 class="hero-title">Tu música en <span>manos expertas</span></h1>
+            <p class="hero-desc">Tienda de instrumentos seleccionados y taller luthier profesional en el corazón de Santiago. Especialistas en calibración, restauración y personalización.</p>
+            <div class="hero-buttons">
+                <a href="#catalogo" class="btn btn-primary">
+                    <i class="fas fa-store"></i> Explorar Catálogo
+                </a>
+                <a href="#servicios" class="btn btn-secondary">
+                    <i class="fas fa-tools"></i> Cotizar Reparación
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         VALUES / FEATURES ROW
+         ========================================== -->
+    <section class="container" style="position: relative; z-index: 10;">
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3>Garantía Asegurada</h3>
+                <p>Todos nuestros instrumentos nuevos y usados seleccionados cuentan con garantía técnica y puesta a punto inicial gratuita.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-guitar feature-icon"></i>
+                <h3>Luthería de Autor</h3>
+                <p>Servicio técnico calificado para instrumentos de cuerda y electrónica. Ajustes óptimos adaptados a tu estilo de ejecución.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shipping-fast feature-icon"></i>
+                <h3>Envíos Asegurados</h3>
+                <p>Despachos rápidos y debidamente protegidos a todas las regiones de Chile con embalaje especial para instrumentos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         BRANDS MARQUEE SECTION
+         ========================================== -->
+    <section class="brands-section">
+        <div class="brands-marquee">
+            <div class="brands-track">
+                <span class="brand-logo-item"><i class="fas fa-guitar"></i> IBANEZ</span>
+                <span class="brand-logo-item"><i class="fas fa-music"></i> FENDER</span>
+                <span class="brand-logo-item"><i class="fas fa-wave-square"></i> YAMAHA</span>
+                <span class="brand-logo-item"><i class="fas fa-compact-disc"></i> GIBSON</span>
+                <span class="brand-logo-item"><i class="fas fa-guitar"></i> TAYLOR</span>
+                <span class="brand-logo-item"><i class="fas fa-drum"></i> GRETSCH</span>
+                <span class="brand-logo-item"><i class="fas fa-sliders-h"></i> LM DRUMS</span>
+                <span class="brand-logo-item"><i class="fas fa-music"></i> CREMONA</span>
+                <!-- Duplicate for infinite effect -->
+                <span class="brand-logo-item"><i class="fas fa-guitar"></i> IBANEZ</span>
+                <span class="brand-logo-item"><i class="fas fa-music"></i> FENDER</span>
+                <span class="brand-logo-item"><i class="fas fa-wave-square"></i> YAMAHA</span>
+                <span class="brand-logo-item"><i class="fas fa-compact-disc"></i> GIBSON</span>
+                <span class="brand-logo-item"><i class="fas fa-guitar"></i> TAYLOR</span>
+                <span class="brand-logo-item"><i class="fas fa-drum"></i> GRETSCH</span>
+                <span class="brand-logo-item"><i class="fas fa-sliders-h"></i> LM DRUMS</span>
+                <span class="brand-logo-item"><i class="fas fa-music"></i> CREMONA</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CATALOG SECTION
+         ========================================== -->
+    <section id="catalogo" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Nuestro <span>Catálogo</span></h2>
+            <p class="section-subtitle">Explora nuestra colección de instrumentos listos para entrega. Puedes agregarlos a tu lista de cotización para consultar stock y factibilidad via WhatsApp.</p>
+            
+            <div class="catalog-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Buscar por marca, modelo o tipo de instrumento...">
+                </div>
+                
+                <div class="filter-tabs" id="filter-tabs">
+                    <button class="filter-tab active" data-filter="todos">Todos</button>
+                    <button class="filter-tab" data-filter="guitarras">Guitarras</button>
+                    <button class="filter-tab" data-filter="violines">Violines y Cuerdas</button>
+                    <button class="filter-tab" data-filter="viento">Viento</button>
+                    <button class="filter-tab" data-filter="percursion">Percusión</button>
+                    <button class="filter-tab" data-filter="audio">Audio y Amplis</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be injected dynamically via Javascript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SOUND DEMOS SECTION
+         ========================================== -->
+    <section class="section-padding" style="background-color: #0e111a; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 class="section-title">Demos de <span>Sonido en Vivo</span></h2>
+            <p class="section-subtitle">Haz clic en reproducir para escuchar notas reales sintetizadas en tiempo real. Prueba la resonancia de nuestros instrumentos calibrados.</p>
+            
+            <div class="demo-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
+                <!-- Instrument 1 -->
+                <div class="estimator-card" style="text-align: center; padding: 30px;">
+                    <i class="fas fa-guitar" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 15px; display: block;"></i>
+                    <h4 style="margin-bottom: 10px;">Guitarra Electroacústica</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Escucha un acorde brillante de afinación estándar de LM.</p>
+                    <button class="btn btn-secondary" onclick="playSound('guitar')" style="padding: 10px 24px; font-size: 0.9rem; width: 100%;">
+                        <i class="fas fa-play"></i> Escuchar Acorde
+                    </button>
+                </div>
+                <!-- Instrument 2 -->
+                <div class="estimator-card" style="text-align: center; padding: 30px;">
+                    <i class="fas fa-music" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 15px; display: block;"></i>
+                    <h4 style="margin-bottom: 10px;">Violín Eléctrico Silent</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Tono sostenido de cuerda frotada con vibrato natural.</p>
+                    <button class="btn btn-secondary" onclick="playSound('violin')" style="padding: 10px 24px; font-size: 0.9rem; width: 100%;">
+                        <i class="fas fa-play"></i> Escuchar Tono
+                    </button>
+                </div>
+                <!-- Instrument 3 -->
+                <div class="estimator-card" style="text-align: center; padding: 30px;">
+                    <i class="fas fa-sliders-h" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 15px; display: block;"></i>
+                    <h4 style="margin-bottom: 10px;">Bajo Activo de 5 Cuerdas</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Tono grave, profundo y redondo con ataque limpio.</p>
+                    <button class="btn btn-secondary" onclick="playSound('bass')" style="padding: 10px 24px; font-size: 0.9rem; width: 100%;">
+                        <i class="fas fa-play"></i> Escuchar Bajo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         LUTHIER SERVICES SECTION
+         ========================================== -->
+    <section id="servicios" class="section-padding services-section">
+        <div class="container">
+            <h2 class="section-title">Taller de <span>Reparación y Calibración</span></h2>
+            <p class="section-subtitle">Ofrecemos soporte técnico experto para que tu instrumento alcance su máximo desempeño acústico y funcional.</p>
+            
+            <div class="services-layout">
+                <div class="services-media">
+                    <img src="img/luthier_workshop.jpg" alt="Luthier trabajando en el taller de LM Instrumentos Musicales">
+                    <div class="services-media-overlay">
+                        <div class="service-exp">
+                            <span class="service-exp-num">15+</span>
+                            <span class="service-exp-lbl">Años de Trayectoria</span>
+                        </div>
+                        <span style="color: var(--accent-gold); font-size: 1.1rem; font-weight: 600;"><i class="fas fa-check-circle"></i> Taller Autorizado</span>
+                    </div>
+                </div>
+                
+                <div class="services-info">
+                    <h3>¿Tu instrumento necesita amor?</h3>
+                    <p>En LM Instrumentos Musicales resolvemos desde una calibración estándar hasta restauraciones estructurales complejas. Garantizamos la máxima precisión en cada afinación, octavación y soldadura electrónica.</p>
+                    
+                    <ul class="services-list">
+                        <li><i class="fas fa-check"></i> Calibración fina y octavación</li>
+                        <li><i class="fas fa-check"></i> Apantallado y reducción de Hum</li>
+                        <li><i class="fas fa-check"></i> Reparación de fisuras y encolados</li>
+                        <li><i class="fas fa-check"></i> Rectificado y coronado de trastes</li>
+                        <li><i class="fas fa-check"></i> Cambio de potenciómetros y jacks</li>
+                        <li><i class="fas fa-check"></i> Modificación y cambio de cápsulas</li>
+                    </ul>
+                    
+                    <!-- Interactive Estimator -->
+                    <div class="estimator-card">
+                        <h4><i class="fas fa-calculator"></i> Cotizador Rápido de Taller</h4>
+                        <div class="estimator-form">
+                            <div class="form-group">
+                                <label for="estimator-instrument">Tipo de Instrumento:</label>
+                                <select id="estimator-instrument">
+                                    <option value="" disabled selected>-- Selecciona un instrumento --</option>
+                                    <option value="guitarra_el">Guitarra Eléctrica</option>
+                                    <option value="bajo">Bajo Eléctrico</option>
+                                    <option value="guitarra_ac">Guitarra Acústica / Clásica</option>
+                                    <option value="violin">Violín / Viola / Cello</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="estimator-service">Servicio Requerido:</label>
+                                <select id="estimator-service" disabled>
+                                    <option value="" disabled selected>-- Primero selecciona el instrumento --</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Dynamic Result Area -->
+                            <div class="estimator-result" id="estimator-result">
+                                <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Valor Estimado</div>
+                                <div class="estimator-price-range" id="est-price-range">$0 CLP</div>
+                                <p class="estimator-details" id="est-details">Detalles del servicio.</p>
+                                <button class="btn btn-primary" id="est-book-btn" style="width: 100%; padding: 10px 15px; font-size: 0.9rem;">
+                                    <i class="fab fa-whatsapp"></i> Agendar Servicio vía WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            
+            <!-- ==========================================
+                 LUTHIER WORK GALLERY
+                 ========================================== -->
+            <div style="margin-top: 80px;">
+                <h3 style="font-size: 1.8rem; text-align: center; margin-bottom: 10px; font-weight: 700; text-transform: uppercase;">Trabajos Recientes en <span>Taller</span></h3>
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 40px auto;">Ejemplos del antes y después de trabajos de restauración, rectificado y calibración profesional.</p>
+                
+                <div class="gallery-grid">
+                    <!-- Case 1: Interactive Comparison Slider -->
+                    <div class="gallery-card">
+                        <div class="comparison-slider" id="luthier-slider-1">
+                            <!-- Background (After) -->
+                            <div class="comparison-after">
+                                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="100" height="100" fill="#12141c"/>
+                                    <path d="M50 35C45 35 42 39 42 45C42 55 35 57 35 67C35 77 41 83 50 83" stroke="#d4af37" stroke-width="4.5" stroke-linecap="round"/>
+                                    <path d="M50 35C55 35 58 39 58 45C58 55 65 57 65 67C65 77 59 83 50 83" stroke="#d4af37" stroke-width="4.5" stroke-linecap="round"/>
+                                    <circle cx="50" cy="58" r="6" fill="#1c202e" stroke="#d4af37" stroke-width="1.5"/>
+                                    <text x="50" y="25" font-family="Montserrat" font-size="8" font-weight="bold" fill="#2ecc71" text-anchor="middle">RESTABLECIDO</text>
+                                </svg>
+                                <span class="gallery-tag-after">Después</span>
+                            </div>
+                            <!-- Foreground (Before) -->
+                            <div class="comparison-before" id="before-img-1">
+                                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="100" height="100" fill="#181c26"/>
+                                    <path d="M50 35C45 35 42 39 42 45C42 55 35 57 35 67C35 77 41 83 50 83" stroke="#8b5a2b" stroke-width="4" stroke-linecap="round"/>
+                                    <line x1="20" y1="20" x2="80" y2="80" stroke="#ff3838" stroke-width="2" opacity="0.3"/>
+                                    <line x1="30" y1="80" x2="70" y2="20" stroke="#ff3838" stroke-width="1.5" opacity="0.2"/>
+                                    <text x="50" y="25" font-family="Montserrat" font-size="8" font-weight="bold" fill="#e74c3c" text-anchor="middle">FRACTURADO</text>
+                                </svg>
+                                <span class="gallery-tag-before" style="left: 8px;">Antes</span>
+                            </div>
+                            <!-- Handle -->
+                            <div class="comparison-handle" id="slider-handle-1">
+                                <div class="handle-button"><i class="fas fa-arrows-alt-h"></i></div>
+                            </div>
+                            <!-- Range Slider input overlay -->
+                            <input type="range" min="0" max="100" value="50" class="comparison-range" id="range-slider-1" aria-label="Deslizar antes y después de luthier">
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Reconstrucción de Pala - Gibson</h4>
+                            <p>Desliza el tirador central para comparar. Reparación de fractura de clavijero con refuerzos internos de madera dura y retoque invisible de acabado.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 2 -->
+                    <div class="gallery-card">
+                        <div class="gallery-images">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100" height="100" fill="#181c26"/>
+                                <rect x="40" y="30" width="20" height="40" fill="#2c3e50" opacity="0.6"/>
+                                <circle cx="50" cy="50" r="10" fill="#e74c3c" opacity="0.4"/>
+                                <text x="50" y="22" font-family="Montserrat" font-size="7" font-weight="bold" fill="#e74c3c" text-anchor="middle">RUIDO / SULFATO</text>
+                            </svg>
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100" height="100" fill="#12141c"/>
+                                <rect x="40" y="30" width="20" height="40" fill="#1e222d" stroke="#2ecc71" stroke-width="1"/>
+                                <circle cx="45" cy="45" r="4" fill="#d4af37"/>
+                                <circle cx="55" cy="45" r="4" fill="#d4af37"/>
+                                <path d="M35 60L50 72L65 60" stroke="#d4af37" stroke-width="1.5"/>
+                                <text x="50" y="22" font-family="Montserrat" font-size="7" font-weight="bold" fill="#2ecc71" text-anchor="middle">APANTALLADO</text>
+                            </svg>
+                            <span class="gallery-tag-before">Antes</span>
+                            <span class="gallery-tag-after">Después</span>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Electrónica y Ruido - Fender Strat</h4>
+                            <p>Apantallado completo con láminas de cobre conductivo, cableado vintage en malla de tela, reemplazo de potenciómetros CTS y eliminación total de ruidos inductivos.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 3 -->
+                    <div class="gallery-card">
+                        <div class="gallery-images">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100" height="100" fill="#181c26"/>
+                                <path d="M20 50H80" stroke="#8e95a5" stroke-width="6" stroke-dasharray="2 3"/>
+                                <text x="50" y="25" font-family="Montserrat" font-size="8" font-weight="bold" fill="#e74c3c" text-anchor="middle">DESNIVELADO</text>
+                            </svg>
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100" height="100" fill="#12141c"/>
+                                <path d="M20 50H80" stroke="#d4af37" stroke-width="5" stroke-linecap="round"/>
+                                <circle cx="30" cy="50" r="1.5" fill="#12141c"/>
+                                <circle cx="50" cy="50" r="1.5" fill="#12141c"/>
+                                <circle cx="70" cy="50" r="1.5" fill="#12141c"/>
+                                <text x="50" y="25" font-family="Montserrat" font-size="8" font-weight="bold" fill="#2ecc71" text-anchor="middle">RECTIFICADO</text>
+                            </svg>
+                            <span class="gallery-tag-before">Antes</span>
+                            <span class="gallery-tag-after">Después</span>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Nivelación de Trastes - Ibanez RG</h4>
+                            <p>Nivelado de diapasón por desgaste de cuerdas, rectificado micrométrico de trastes altos, recoronado redondeado de precisión y pulido espejo final.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ABOUT US SECTION
+         ========================================== -->
+    <section id="nosotros" class="section-padding about-section">
+        <div class="container">
+            <h2 class="section-title">Sobre <span>Nosotros</span></h2>
+            <p class="section-subtitle">Conoce nuestra historia y el equipo detrás de la excelencia de tus instrumentos.</p>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Pasión por la música y el trabajo bien hecho</h3>
+                    <p>Fundado por músicos y técnicos profesionales, LM Instrumentos Musicales nació con el objetivo de brindar una alternativa de confianza en el mercado nacional. Ubicados en la zona histórica de Santiago, nos hemos convertido en el punto de encuentro de músicos aficionados y profesionales que buscan atención personalizada, asesoría técnica real y productos de óptima calidad.</p>
+                    <p>No somos solo una tienda; somos un espacio donde comprendemos las necesidades de cada artista. Cada instrumento que pasa por nuestras manos recibe un trato riguroso y es revisado al milímetro antes de ser entregado.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-num">100%</div>
+                            <div class="stat-label">Clientes Satisfechos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">5K+</div>
+                            <div class="stat-label">Servicios Realizados</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">10+</div>
+                            <div class="stat-label">Marcas Representadas</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-badge-card">
+                    <div class="badge-item">
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <h4>Atención Personalizada</h4>
+                            <p>Nos tomamos el tiempo para escuchar lo que buscas y te guiamos honestamente hacia la mejor opción.</p>
+                        </div>
+                    </div>
+                    <div class="badge-item">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <h4>Técnicos Certificados</h4>
+                            <p>Nuestros luthiers cuentan con estudios de electrónica acústica y años de experiencia aplicada.</p>
+                        </div>
+                    </div>
+                    <div class="badge-item">
+                        <i class="fas fa-compress-alt"></i>
+                        <div>
+                            <h4>Sustentabilidad</h4>
+                            <p>Fomentamos la reparación, reciclaje y puesta en valor de instrumentos clásicos e históricos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ==========================================
+                 STORE REAL GALLERY
+                 ========================================== -->
+            <div style="margin-top: 80px;">
+                <h3 style="font-size: 1.8rem; text-align: center; margin-bottom: 10px; font-weight: 700; text-transform: uppercase;">Nuestra <span>Tienda e Instalaciones</span></h3>
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 40px auto;">Imágenes de nuestro local y sala de exhibición en Santiago Centro.</p>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-card" style="aspect-ratio: 4/3;">
+                        <div class="product-img-wrapper" style="padding-top: 100%; height: 100%;">
+                            <img src="IMG_20260706_130931.jpg" alt="Instalaciones LM Instrumentos Musicales 1" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="gallery-card" style="aspect-ratio: 4/3;">
+                        <div class="product-img-wrapper" style="padding-top: 100%; height: 100%;">
+                            <img src="IMG_20260706_130935.jpg" alt="Instalaciones LM Instrumentos Musicales 2" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="gallery-card" style="aspect-ratio: 4/3;">
+                        <div class="product-img-wrapper" style="padding-top: 100%; height: 100%;">
+                            <img src="IMG_20260706_130939.jpg" alt="Instalaciones LM Instrumentos Musicales 3" style="object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         TESTIMONIALS SECTION
+         ========================================== -->
+    <section class="section-padding testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Opinión de <span>Músicos</span></h2>
+            <p class="section-subtitle">Qué dicen nuestros clientes sobre la atención de la tienda y la calidad de nuestro taller técnico.</p>
+            
+            <div class="carousel-container">
+                <button class="carousel-nav-btn btn-prev" id="carousel-prev" aria-label="Testimonio anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="testimonials-wrapper" id="testimonials-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Llevé mi violín eléctrico para una rectificación de diapasón y solucionar un ruido de masa en el preamplificador. El trabajo quedó impecable, súper pulcro y rápido. Se nota que entienden de electrónica y acústica."</p>
+                            <h4 class="testimonial-author">Andrés Valenzuela</h4>
+                            <div class="testimonial-role">Violinista Sesionista - Santiago</div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Compré una Taylor usada certificada en LM. El instrumento venía calibrado a la perfección con cuerdas nuevas y una acción bajísima comodísima de tocar. Excelente servicio y muy transparente toda la compra."</p>
+                            <h4 class="testimonial-author">Carolina Espinoza</h4>
+                            <div class="testimonial-role">Cantautora Indie</div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"La mejor tienda de calibración de Santiago. He llevado mis dos guitarras Ibanez y el cambio fue del cielo a la tierra. Cero trasteos, afinación super estable y me las entregaron limpias como espejos."</p>
+                            <h4 class="testimonial-author">Mauricio Rojas</h4>
+                            <div class="testimonial-role">Guitarrista Metal - Banda 'Cenizas'</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-nav-btn btn-next" id="carousel-next" aria-label="Testimonio siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="carousel-indicators" id="carousel-indicators">
+                    <!-- Dots injected dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FAQ SECTION
+         ========================================== -->
+    <section id="faq" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Preguntas <span>Frecuentes</span></h2>
+            <p class="section-subtitle">Aclara tus dudas sobre nuestros procesos, cotizaciones y tiempos de servicio técnico.</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Cuál es el tiempo promedio para una calibración estándar?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El tiempo promedio de entrega para una calibración estándar es de 3 a 5 días hábiles. Si requieres un trabajo urgente ('Express'), disponemos de un servicio prioritario de 24 horas con un costo adicional sujeto a disponibilidad del taller.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Los instrumentos usados cuentan con garantía?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, absolutamente. Todos nuestros instrumentos usados seleccionados pasan por un estricto control de calidad y ajuste en taller antes de su venta, por lo que ofrecemos una garantía técnica escrita de 3 meses ante cualquier defecto funcional.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Hacen envíos a regiones de Chile?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Realizamos despachos a todo Chile a través de Starken, Chilexpress o Correos de Chile, por pagar o previamente cotizado. Los instrumentos se envían embalados profesionalmente con burbujas de alta densidad y en cajas reforzadas para evitar golpes.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Aceptan instrumentos en parte de pago o permutas?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Recibimos instrumentos en parte de pago previa revisión técnica física en nuestro taller. Evaluamos originalidad, estado funcional y cosmético. No realizamos permutas directas uno a uno, solo transacciones como abono para la compra de un artículo superior.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Qué métodos de pago aceptan?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceptamos transferencias bancarias, efectivo, tarjetas de débito y crédito a través de Webpay/Flow con posibilidad de cuotas sin interés según tu banco.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         INSTAGRAM SIMULATED FEED SECTION
+         ========================================== -->
+    <section class="section-padding instagram-section">
+        <div class="container">
+            <h2 class="section-title">Comunidad en <span>Instagram</span></h2>
+            <p class="section-subtitle">Síguenos en <a href="https://www.instagram.com/lm_instrumentosmusicales194" target="_blank" style="color: var(--accent-gold); text-decoration: underline;">@lm_instrumentosmusicales194</a> para ver ingresos de stock diarios, videos demostrativos y el día a día de nuestro taller de luthería.</p>
+            
+            <div class="instagram-grid">
+                <!-- Post 1 -->
+                <a href="https://www.instagram.com/lm_instrumentosmusicales194" target="_blank" class="instagram-item">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="#151720"/>
+                        <path d="M50 20C47 20 45 23 45 26V35C38 37 34 43 34 50C34 60 41 68 50 68C59 60 66 60 66 50" stroke="#d4af37" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="5" fill="#d4af37" opacity="0.3"/>
+                        <line x1="50" y1="20" x2="50" y2="80" stroke="#d4af37" stroke-width="1"/>
+                    </svg>
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span><i class="fas fa-heart"></i> 142</span>
+                            <span><i class="fas fa-comment"></i> 18</span>
+                        </div>
+                        <p class="instagram-caption">Ajustando los últimos detalles de este hermoso violín eléctrico para concierto... 🎻✨ #luthier #electricviolin #santiago</p>
+                    </div>
+                </a>
+                
+                <!-- Post 2 -->
+                <a href="https://www.instagram.com/lm_instrumentosmusicales194" target="_blank" class="instagram-item">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="#1a1212"/>
+                        <path d="M40 30L60 30L55 80L45 80Z" fill="#a0522d" opacity="0.7"/>
+                        <circle cx="50" cy="45" r="8" fill="#d4af37"/>
+                    </svg>
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span><i class="fas fa-heart"></i> 98</span>
+                            <span><i class="fas fa-comment"></i> 6</span>
+                        </div>
+                        <p class="instagram-caption">¡Ingreso de stock! Nuevas guitarras electroacústicas Taylor listas para entrega. 🎸 #taylorguitars #musiclife</p>
+                    </div>
+                </a>
+                
+                <!-- Post 3 -->
+                <a href="https://www.instagram.com/lm_instrumentosmusicales194" target="_blank" class="instagram-item">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="#0f1118"/>
+                        <path d="M30 40H70V70H30Z" fill="#12141c" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="30" y1="55" x2="70" y2="55" stroke="#d4af37" stroke-width="1.5"/>
+                    </svg>
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span><i class="fas fa-heart"></i> 215</span>
+                            <span><i class="fas fa-comment"></i> 32</span>
+                        </div>
+                        <p class="instagram-caption">Calibración completa y rectificado para esta joya de Ibanez. ¡Quedó volando! ⚡🎸 #ibanez #guitarsetup</p>
+                    </div>
+                </a>
+                
+                <!-- Post 4 -->
+                <a href="https://www.instagram.com/lm_instrumentosmusicales194" target="_blank" class="instagram-item">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="#181c26"/>
+                        <circle cx="50" cy="50" r="25" stroke="#d4af37" stroke-width="3"/>
+                        <circle cx="50" cy="50" r="10" stroke="#8e95a5" stroke-width="2"/>
+                    </svg>
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span><i class="fas fa-heart"></i> 110</span>
+                            <span><i class="fas fa-comment"></i> 12</span>
+                        </div>
+                        <p class="instagram-caption">Doble pedal de bombo LM Drums listo para tronar en el escenario. 🥁 #drums #percussion #lmdrums</p>
+                    </div>
+                </a>
+                
+                <!-- Post 5 -->
+                <a href="https://www.instagram.com/lm_instrumentosmusicales194" target="_blank" class="instagram-item">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="#15131c"/>
+                        <path d="M50 20L40 40H60Z" fill="#a0522d"/>
+                        <line x1="50" y1="40" x2="50" y2="80" stroke="#8e95a5" stroke-width="3"/>
+                    </svg>
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span><i class="fas fa-heart"></i> 189</span>
+                            <span><i class="fas fa-comment"></i> 24</span>
+                        </div>
+                        <p class="instagram-caption">Trabajo de encolado de pala y retoque de laca en esta clásica Gibson. 🛠️🎨 #luthiersantiago</p>
+                    </div>
+                </a>
+                
+                <!-- Post 6 -->
+                <a href="https://www.instagram.com/lm_instrumentosmusicales194" target="_blank" class="instagram-item">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="#111317"/>
+                        <rect x="30" y="30" width="40" height="40" rx="3" fill="#191c26" stroke="#d4af37" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="8" fill="#d4af37" opacity="0.4"/>
+                    </svg>
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span><i class="fas fa-heart"></i> 155</span>
+                            <span><i class="fas fa-comment"></i> 15</span>
+                        </div>
+                        <p class="instagram-caption">Equipos de audio y amplificadores a tubo en mantención. Sonido cálido garantizado. 🔌🔊 #tubesound #fender</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="instagram-btn-wrapper">
+                <a href="https://www.instagram.com/lm_instrumentosmusicales194" target="_blank" class="btn btn-secondary" style="border-color: var(--accent-gold); color: var(--accent-gold);">
+                    <i class="fab fa-instagram"></i> Ver Todo en Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CONTACT & LOCATION SECTION
+         ========================================== -->
+    <section id="contacto" class="section-padding" style="background-color: #0e111a; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 class="section-title">Contáctanos o <span>Visítanos</span></h2>
+            <p class="section-subtitle">Escríbenos para consultas rápidas o ven directamente a visitarnos en nuestro local en Santiago Centro.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info-panel">
+                    <div class="contact-details-list">
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-detail-text">
+                                <h4>Dirección</h4>
+                                <p>Av. Libertador Bernardo O'Higgins 340, Santiago</p>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">(Cerca de Metro Universidad de Chile / Santa Lucía)</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="contact-detail-text">
+                                <h4>WhatsApp Comercial</h4>
+                                <p>+56 9 8765 4321</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-detail-text">
+                                <h4>Correo Electrónico</h4>
+                                <p>contacto@lminstrumentosmusicales.cl</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-hours">
+                        <h4><i class="fas fa-clock"></i> Horario de Atención</h4>
+                        <div class="hours-grid">
+                            <div class="hours-row">
+                                <span class="hours-day">Lunes a Viernes</span>
+                                <span class="hours-time">10:00 AM - 07:00 PM</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="hours-day">Sábado</span>
+                                <span class="hours-time">10:30 AM - 02:30 PM</span>
+                            </div>
+                            <div class="hours-row" style="color: var(--error);">
+                                <span class="hours-day">Domingos y Feriados</span>
+                                <span class="hours-time">Cerrado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-right-panel">
+                    <div class="contact-form-card">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name">Nombre Completo *</label>
+                                <input type="text" id="contact-name" placeholder="Ej. Juan Pérez" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Correo Electrónico *</label>
+                                <input type="email" id="contact-email" placeholder="Ej. juan@correo.com" required>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label for="contact-phone">Teléfono / WhatsApp</label>
+                                <input type="tel" id="contact-phone" placeholder="Ej. +56912345678">
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label for="contact-message">Tu Consulta o Instrumento a reparar *</label>
+                                <textarea id="contact-message" rows="4" placeholder="Cuéntanos en qué te podemos ayudar..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">
+                                <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Leaflet Styled Map -->
+                    <div class="map-container">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER SECTION
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo-desc">
+                    <a href="#inicio" class="logo">
+                        <i class="fas fa-guitar logo-icon"></i>
+                        LM<span>Instrumentos Musicales</span>
+                    </a>
+                    <p class="footer-desc">Tienda líder y taller especialista en luthería en Santiago de Chile. Dedicados a potenciar el talento de los músicos chilenos ofreciendo servicio técnico experto e instrumentos seleccionados con garantía real.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/lm_instrumentosmusicales194" target="_blank" class="social-btn" aria-label="Visítanos en Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="social-btn" aria-label="Síguenos en YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="social-btn" aria-label="Síguenos en Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Nuestra Tienda</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#servicios">Taller Técnico</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Ayuda / Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="#contacto">Ubicación y Sucursal</a></li>
+                        <li><a href="#servicios">Precios de Luthería</a></li>
+                        <li><a href="#contacto">Escríbenos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Boletín Musical</h4>
+                    <div class="newsletter-form">
+                        <p>Inscríbete para recibir consejos de cuidado instrumental, ofertas de catálogo y cupones de descuento para calibración.</p>
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Tu correo aquí" aria-label="Ingresa tu correo electrónico">
+                            <button type="button" onclick="showToast('¡Te has registrado con éxito!', 'success')">Unirse</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 LM Instrumentos Musicales. Todos los derechos reservados. Diseñado para potenciar tu música.</p>
+                <div class="footer-bottom-links">
+                    <a href="#faq" style="font-size: 0.8rem;">Términos de Garantía</a>
+                    <a href="#faq" style="font-size: 0.8rem;">Políticas de Envío</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         QUOTE CART DRAWER (SIDE PANEL)
+         ========================================== -->
+    <div class="cart-drawer-overlay" id="cart-overlay">
+        <div class="cart-drawer">
+            <div class="cart-drawer-header">
+                <h3><i class="fas fa-file-invoice-dollar" style="color: var(--accent-gold);"></i> Mi Cotización</h3>
+                <button class="cart-drawer-close" id="cart-close-btn" aria-label="Cerrar cotizador">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Items scroll container -->
+            <div class="cart-items-list" id="cart-items-container">
+                <!-- Cart items will be injected here -->
+            </div>
+            
+            <div class="cart-drawer-footer">
+                <div class="cart-summary-row">
+                    <span>Total Estimado:</span>
+                    <span class="cart-summary-total" id="cart-total">$0 CLP</span>
+                </div>
+                <button class="btn btn-primary cart-checkout-btn" id="cart-checkout-btn">
+                    <i class="fab fa-whatsapp"></i> Solicitar por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         INSTAGRAM STORY MODAL
+         ========================================== -->
+    <div class="story-modal-overlay" id="story-modal" onclick="closeStory()">
+        <div class="story-modal-content" onclick="event.stopPropagation()">
+            <div class="story-progress-bar">
+                <div class="story-progress-fill" id="story-progress"></div>
+            </div>
+            <div class="story-modal-header">
+                <div class="story-modal-avatar"><i class="fas fa-guitar"></i></div>
+                <div class="story-modal-info">
+                    <span class="story-modal-username">lminstrumentos_musicales</span>
+                    <span class="story-modal-time">2h</span>
+                </div>
+                <button class="story-modal-close" onclick="closeStory()">&times;</button>
+            </div>
+            <div class="story-modal-body" id="story-modal-body">
+                <!-- Dynamic Story Card Content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         TOAST SYSTEM CONTAINER
+         ========================================== -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Leaflet Map JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>
